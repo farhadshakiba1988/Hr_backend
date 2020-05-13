@@ -20,3 +20,5 @@ class ProposalInterviewController:
     @staticmethod
     def create(request):
         return JsonResponse(True)
+
+
