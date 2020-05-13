@@ -19,3 +19,12 @@ class Personnel(models.Model):
     intro_checklist = models.CharField(max_length=120)
     equip_checklist = models.CharField(max_length=120)
     sts = models.CharField(choices=STATUS, max_length=10)
+
+
+
+
+
+
+
+
+

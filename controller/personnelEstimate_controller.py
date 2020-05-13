@@ -1,10 +1,8 @@
-import fake as fake
+import fake
 from django.http import JsonResponse
 
 
-class ProposalController:
+class PersonnelEstimateController:
     @staticmethod
     def index(request):
         return JsonResponse(fake.data())
-
-
