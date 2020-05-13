@@ -1,7 +1,7 @@
 from django.urls import path
 
 from api import views
-from controller import RegisterController
+from controller import *
 
 proposal = [
     path('proposal-list/', views.proposallist, name='proposal-list'),
@@ -23,48 +23,48 @@ registerNamespace = 'personnel'
 personnel = [
     path(registerNamespace + '/list', RegisterController.jobs, name='personnel-list'),
     path(registerNamespace + '/delete', RegisterController.ncode, name='personnel-delete'),
-    path(registerNamespace + '/upload', RegisterController.upload, name='personnel-upload'),
+    path(registerNamespace + '/update', RegisterController.upload, name='personnel-update'),
     path(registerNamespace + '/create', RegisterController.save, name='personnel-create'),
 ]
 
 registerNamespace = 'proposalInterview'
 proposalInterview = [
-    path(registerNamespace + '/list', RegisterController.jobs, name='proposalInterview-list'),
-    path(registerNamespace + '/delete', RegisterController.ncode, name='proposalInterview-delete'),
-    path(registerNamespace + '/upload', RegisterController.upload, name='proposalInterview-upload'),
-    path(registerNamespace + '/create', RegisterController.save, name='proposalInterview-create'),
+    path(registerNamespace + '/list', ProposalInterviewController.list, name='proposalInterview-list'),
+    path(registerNamespace + '/delete', ProposalInterviewController.delete, name='proposalInterview-delete'),
+    path(registerNamespace + '/update', ProposalInterviewController.update, name='proposalInterview-update'),
+    path(registerNamespace + '/create', ProposalInterviewController.create, name='proposalInterview-create'),
 ]
 
 registerNamespace = 'proposalFamily'
 proposalFamily = [
-    path(registerNamespace + '/list', RegisterController.jobs, name='proposalFamily-list'),
-    path(registerNamespace + '/delete', RegisterController.ncode, name='proposalFamily-delete'),
-    path(registerNamespace + '/upload', RegisterController.upload, name='proposalFamily-upload'),
-    path(registerNamespace + '/create', RegisterController.save, name='proposalFamily-create'),
+    path(registerNamespace + '/list', ProposalFamilyController.list, name='proposalFamily-list'),
+    path(registerNamespace + '/delete', ProposalFamilyController.delete, name='proposalFamily-delete'),
+    path(registerNamespace + '/update', ProposalFamilyController.update, name='proposalFamily-update'),
+    path(registerNamespace + '/create', ProposalFamilyController.create, name='proposalFamily-create'),
 ]
 
 registerNamespace = 'proposalEducation'
 proposalEducation = [
-    path(registerNamespace + '/list', RegisterController.jobs, name='proposalEducation-list'),
-    path(registerNamespace + '/delete', RegisterController.ncode, name='proposalEducation-delete'),
-    path(registerNamespace + '/upload', RegisterController.upload, name='proposalEducation-upload'),
-    path(registerNamespace + '/create', RegisterController.save, name='proposalEducation-create'),
+    path(registerNamespace + '/list', ProposalEducationController.list, name='proposalEducation-list'),
+    path(registerNamespace + '/delete', ProposalEducationController.delete, name='proposalEducation-delete'),
+    path(registerNamespace + '/update', ProposalEducationController.update, name='proposalEducation-update'),
+    path(registerNamespace + '/create', ProposalEducationController.create, name='proposalEducation-create'),
 ]
 
 registerNamespace = 'personnelEstimate'
 personnelEstimate = [
-    path(registerNamespace + '/list', RegisterController.jobs, name='personnelEstimate-list'),
-    path(registerNamespace + '/delete', RegisterController.ncode, name='personnelEstimate-delete'),
-    path(registerNamespace + '/upload', RegisterController.upload, name='personnelEstimate-upload'),
-    path(registerNamespace + '/create', RegisterController.save, name='personnelEstimate-create'),
+    path(registerNamespace + '/list', PersonnelEstimateController.list, name='personnelEstimate-list'),
+    path(registerNamespace + '/delete', PersonnelEstimateController.delete, name='personnelEstimate-delete'),
+    path(registerNamespace + '/update', PersonnelEstimateController.update, name='personnelEstimate-update'),
+    path(registerNamespace + '/create', PersonnelEstimateController.create, name='personnelEstimate-create'),
 ]
 
 registerNamespace = 'personnelContract'
 personnelContract = [
-    path(registerNamespace + '/list', RegisterController.jobs, name='personnelContract-list'),
-    path(registerNamespace + '/delete', RegisterController.ncode, name='personnelContract-delete'),
-    path(registerNamespace + '/upload', RegisterController.upload, name='personnelContract-upload'),
-    path(registerNamespace + '/create', RegisterController.save, name='personnelContract-create'),
+    path(registerNamespace + '/list', PersonnelContractController.list, name='personnelContract-list'),
+    path(registerNamespace + '/delete', PersonnelContractController.delete, name='personnelContract-delete'),
+    path(registerNamespace + '/update', PersonnelContractController.update, name='personnelContract-update'),
+    path(registerNamespace + '/create', PersonnelContractController.create, name='personnelContract-create'),
 ]
 
 urlpatterns = (proposal + register + personnel +
